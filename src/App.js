@@ -4,6 +4,7 @@ import Games from './Games';
 import AddGames from './Components/AddGame';
 import UpdateGame from './Components/UpdateGame';
 import DeleteGame from './Components/DeleteGame';
+import SearchGame from './Components/SearchGame';
 // import {AddGames, UpdateGame} from './api_requests';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     const [newGameFlag, setNewGameFlag] = useState(false);
     const [updatedGameFlag, setUpdatedGameFlag] = useState(false);
     const [deleteGameFlag, setDeleteGameFlag] = useState(false);
+    const [emptySearchFlag, setEmptySearchFlag] = useState(false);
     const gameControllerUrl = "https://localhost:7420/api/Games"
 
     //! Add show games by search if search field is still filled on uådate or delete etc.
@@ -18,7 +20,7 @@ function App() {
         axios.get(gameControllerUrl)
         .then(response=>setGames(response.data))
         .catch(error=>console.log(error))
-    },[newGameFlag, updatedGameFlag, deleteGameFlag]);
+    },[newGameFlag, updatedGameFlag, deleteGameFlag, emptySearchFlag]);
 
     const addGame = async (newGame, newGameImageFile) => {
         await axios.post(gameControllerUrl,
@@ -86,10 +88,14 @@ function App() {
         .catch(error=>console.log(error))
     }
 
-    const searchGameByName = (searchName)=>{
-        axios.get(`${gameControllerUrl}/name/${searchName}`)
-        .then(response=>setGames(response.data))
-        .catch(error=>console.log(error))
+    const searchGameByName = (searchWord)=>{
+        if(searchWord){
+            axios.get(`${gameControllerUrl}/search/${searchWord}`)
+            .then(response=>setGames(response.data))
+            .catch(error=>console.log(error))
+            return
+        }
+        setEmptySearchFlag(prev=>!prev); // shows all if user click search with no searchword
     }
 
     return (

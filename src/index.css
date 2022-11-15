@@ -23,21 +23,12 @@ body {
     background-color: #1E1E1E; */
 }
 
-/* .container{
-    box-sizing: border-box;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    padding: 64px;
-    width: 100%;
-    border: 1px solid #444444;
-    overflow: hidden;
-} */
-
 .row>*{
     padding-right: 0 !important;
     padding-left: 0 !important;
+}
+.col-sm{
+    margin-bottom: 1em;
 }
 
 .card{
@@ -65,7 +56,7 @@ body {
     flex-grow: 0;
 }
 
-.card p, h3{
+.card p, h3, h5{
     display: flex;
     margin: 4px 24px;
 }

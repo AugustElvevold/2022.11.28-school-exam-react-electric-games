@@ -26,7 +26,7 @@ function AddGame({onAddGame}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Add A Game</h3>
+            <h3>Add a game</h3>
             <div>
                 <input type="text" id="add-game-id" placeholder="Enter the game id" onChange={(e)=>setId(e.target.value)}></input>
                 <input type="text" id="add-game-title" placeholder="Enter the game title" onChange={(e)=>setTitle(e.target.value)}></input>
