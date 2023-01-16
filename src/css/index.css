@@ -1,0 +1,261 @@
+:root {
+    --color-background: rgb(28, 29, 29);
+    --color-menu: rgba(51, 53, 53, 0.8);
+
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-hover: rgba(255, 255, 255, 0.1);
+
+    --color-text: rgb(255, 255, 255);
+    --color-text-secondary: rgb(185, 186, 186);
+
+    --color-menu-icon: rgb(183, 183, 188);
+    --color-menu-icon-inactive: rgb(94, 95, 99);
+    --color-menu-input-background: rgb(46, 47, 51);
+    --color-menu-input-text-inactive: rgb(96, 97, 100);
+
+    /* --color-danger: rgb(220, 53, 69); Light mode  */
+    --color-danger: rgb(203, 36, 41);
+    --color-danger-passive: rgba(203, 36, 41, 0.5);
+    /* --color-primary: rgb(0, 140, 255); Light mode */
+    --color-primary: rgb(11, 119, 208);
+    --color-primary-passive: rgba(11, 119, 208, 0.5);
+
+    --color-success: rgb(26, 135, 84);
+    --color-success-passive: rgba(26, 135, 84, 0.5);
+
+    --blur-menu: blur(2em);
+    --border-radius: 0.5rem;
+
+    box-sizing: border-box;
+}
+
+.navbar:before,
+.dropdown-menu:before,
+.popup-menu::before{
+    backdrop-filter: var(--blur-menu);
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.dropdown-menu {
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: var(--color-text);
+    background-color: transparent;
+    /* background-color: var(--color-background); */
+    /* background: linear-gradient(135deg, rgba(44,217,255,1) 0%, rgba(255,71,231,1) 100%); */
+}
+
+html{
+    min-height: 100%;
+    background: linear-gradient(135deg, rgba(35,147,172,1) 0%, rgba(91,33,83,1) 100%);
+
+}
+
+h5 {
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 0.5em;
+}
+
+.display-id {
+    margin: 0;
+    margin-bottom: 1em;
+    scale: 85%;
+    color: var(--color-text-secondary);
+}
+
+.flex-center {
+    /* padding: 2em; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* border: 1px solid hotpink; */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--card-width)*1px);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background-color: var(--color-menu);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    height: 100%;
+    /* border: 1px solid hotpink; */
+}
+
+.card img {
+    object-fit: cover;
+    /* width: 100%; */
+    height: calc(var(--card-width)*1px);
+    /* Makes sure image is square no matter the size of the card */
+    margin-bottom: 10px;
+}
+
+.card-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-preview {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+/* shadow for making edit dots clearer on top of image */
+.background-shadow {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.9) 100%);
+    width: 100% !important;
+    height: 50px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    opacity: 0%;
+    transition: 0.3s;
+}
+
+.background-shadow:hover,
+.card:hover .background-shadow {
+    opacity: 100%;
+}
+
+.btn-overlay {
+    color: var(--color-menu-icon);
+}
+
+.btn-overlay:hover {
+    color: var(--color-text);
+}
+
+.btn-overlay:focus {
+    transform: scale(95%);
+}
+
+.btn-overlay:enabled {
+    border: none !important;
+}
+
+.help-text{
+    position: absolute;
+    margin-top: 80px;
+    right: 24px;
+    font-size: 10px;
+    color: var(--color-menu-input-text-inactive);
+    cursor: pointer;
+}
+
+/* Bootstrap overrides */
+.container {
+    margin: .5em 0;
+    padding: 0;
+    width: auto;
+}
+
+.bi-big {
+    font-size: 1.5em;
+}
+
+.dropdown-menu {
+    background-color: var(--color-menu);
+}
+
+.dropdown-menu-right {
+    top: -10px !important;
+    left: 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+.dropdown-item:hover {
+    color: var(--color-text);
+    background-color: var(--color-hover);
+}
+
+.btn-delete:hover {
+    background-color: var(--color-danger);
+}
+
+.btn-update:hover {
+    background-color: var(--color-primary);
+}
+
+.btn-inactive{
+    background-color: var(--color-menu);
+    color: var(--color-menu-input-text-inactive);
+}
+.btn-inactive:hover{
+    background-color: var(--color-danger-passive);
+    color: var(--color-text-secondary);
+}
+.btn-inactive:active{
+    background-color: var(--color-danger) !important;
+    color: var(--color-text-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+}
+
+.dropdown-item>p {
+    margin: 4px auto 4px 10px !important;
+}
+
+.form-group,
+.custom-file {
+    padding: 0 !important;
+}
+
+.form-group>input,
+.custom-file>input,
+.form-group>input:focus {
+    margin-bottom: 1em;
+}
+
+.form-group>input,
+.custom-file>input::file-selector-button,
+.form-group>input:focus {
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
