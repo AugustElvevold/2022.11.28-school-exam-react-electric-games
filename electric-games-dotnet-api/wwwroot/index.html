@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>ElectricGamesApi</h1>
+    </section>
+
+    <section>
+        <h2>Games endpoints: </h2>
+        <ul>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Games</p>
+                <h4>Parameters</h4>
+                <code>No prameters</code>
+                <h4>Response</h4>
+                <code>[{                        <br>
+                      "id": "string",           <br>
+                      "title": "string",        <br>
+                      "platform": "string",     <br>
+                      "release_year": "string", <br>
+                      "image": "string"         <br>
+                    }]</code>
+                <h4>Description</h4>
+                <p>Returns all games in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Post</h3>
+                <p>/api/Games</p>
+                <h4>Parameters</h4>
+                <code>Requested body:           <br>
+                    application/json            <br>
+                    {                           <br>
+                      "id": "string",           <br>
+                      "title": "string",        <br>
+                      "platform": "string",     <br>
+                      "release_year": "string", <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Creates a new game in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Games/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>
+                <h4>Response</h4>
+                <code>{                         <br>
+                      "id": "string",           <br>
+                      "title": "string",        <br>
+                      "platform": "string",     <br>
+                      "release_year": "string", <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Description</h4>
+                <p>Returns a game if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Put</h3>
+                <p>/api/Games/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>    <br>
+                <code>Requested body:           <br>
+                    {                           <br>
+                      "id": "string",           <br>
+                      "title": "string",        <br>
+                      "platform": "string",     <br>
+                      "release_year": "string", <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Updates a game by id, if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Delete</h3>
+                <p>/api/Games/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Deletes game by id, if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Games/search/{searchWord}</p>
+                <h4>Parameters</h4>
+                <code>Path: searchWord string</code>
+                <h4>Response</h4>
+                <code>[{                        <br>
+                      "id": "string",           <br>
+                      "title": "string",        <br>
+                      "platform": "string",     <br>
+                      "release_year": "string", <br>
+                      "image": "string"         <br>
+                    }]</code>
+                <h4>Description</h4>
+                <p>Returns all games in the database that has text matching the search word</p>
+            </li>
+            <br>
+            <li>
+                <h3>Post</h3>
+                <p>/api/Games/UploadImage</p>
+                <h4>Parameters</h4>
+                <code>Requested body:           <br>
+                    multipart/form-data         <br>
+                    file string($binary)
+                </code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Uploads an image to wwwroot/images/games</p>
+            </li>
+        </ul>
+    </section>
+
+    <br><hr><br>
+    
+    <section>
+        <h2>Characters endpoints: </h2>
+        <ul>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Characters</p>
+                <h4>Parameters</h4>
+                <code>No prameters</code>
+                <h4>Response</h4>
+                <code>[{                        <br>
+                      "id": "string",           <br>
+                      "name": "string",         <br>
+                      "game": "string",         <br>
+                      "image": "string"         <br>
+                    }]</code>
+                <h4>Description</h4>
+                <p>Returns all characters in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Post</h3>
+                <p>/api/Characters</p>
+                <h4>Parameters</h4>
+                <code>Requested body:           <br>
+                    application/json            <br>
+                    {                           <br>
+                      "id": "string",           <br>
+                      "name": "string",         <br>
+                      "game": "string",         <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Creates a new character in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Characters/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>
+                <h4>Response</h4>
+                <code>{                         <br>
+                      "id": "string",           <br>
+                      "name": "string",         <br>
+                      "game": "string",         <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Description</h4>
+                <p>Returns a character if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Put</h3>
+                <p>/api/Characters/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>    <br>
+                <code>Requested body:           <br>
+                    {                           <br>
+                      "id": "string",           <br>
+                      "name": "string",         <br>
+                      "game": "string",         <br>
+                      "image": "string"         <br>
+                    }</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Updates a character by id, if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Delete</h3>
+                <p>/api/Characters/{id}</p>
+                <h4>Parameters</h4>
+                <code>Path: id string</code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Deletes character by id, if a matching id is found in the database</p>
+            </li>
+            <br>
+            <li>
+                <h3>Get</h3>
+                <p>/api/Characters/search/{searchWord}</p>
+                <h4>Parameters</h4>
+                <code>Path: searchWord string</code>
+                <h4>Response</h4>
+                <code>[{                        <br>
+                      "id": "string",           <br>
+                      "name": "string",         <br>
+                      "game": "string",         <br>
+                      "image": "string"         <br>
+                    }]</code>
+                <h4>Description</h4>
+                <p>Returns all characters in the database that has text matching the search word</p>
+            </li>
+            <br>
+            <li>
+                <h3>Post</h3>
+                <p>/api/Characters/UploadImage</p>
+                <h4>Parameters</h4>
+                <code>Requested body:           <br>
+                    multipart/form-data         <br>
+                    file string($binary)
+                </code>
+                <h4>Response</h4>
+                <code>200</code>
+            <h4>Description</h4>
+                <p>Uploads an image to wwwroot/images/characters</p>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
