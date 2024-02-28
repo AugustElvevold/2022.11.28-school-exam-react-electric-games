@@ -4,6 +4,9 @@
 
 This project is a dynamic website featuring a collection of pages that include a homepage, games and characters showcases, and a custom-made Hangman game. Developed with an emphasis on universal design, the website ensures accessibility and ease of use across various devices and screen sizes. The frontend interacts with a .NET backend via Axios to manage data stored in MongoDB, providing a seamless experience for managing game and character information.
 
+Preview from games page:
+![image](https://github.com/AugustElvevold/electric_games_react/assets/89490288/c95cc8af-9296-4be4-9d26-6cc5dea6f175)
+
 ## Features
 
 -**Homepage**: Serves as the landing page with quick navigation to other sections of the website.
