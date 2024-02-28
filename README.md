@@ -62,8 +62,10 @@ dotnet dev-certs https --trust
 
 ### Configuring Database Connection
 
-Due to the sensitive nature of the database connection information, the cloud-hosted MongoDB details are not included in the project. To run the project locally, you will need toset up your MongoDB instance or use a mock service:
+This project uses a cloud-hosted MongoDB instance. For security reasons, the connection details are not included in the project files. To run the project locally:
 
-1. **Create a MongoDB Cluster**: Sign up for MongoDB Atlas orset up a local MongoDB server.
-2. **Configure Connection String**: In the backend project, locate the configuration file responsible for database connections. Replace the placeholder with your connection string.
-3. **Environment Variables**: It's recommended to store sensitive data like your database connection string in environment variables. Use a `.env` file or your hosting service's configuration tools to securely manage this information.
+1. Create a `.env` file in the root directory.
+2. Contact me to obtain the necessary environment variable details for the database connection.
+3. Populate the `.env` file with the provided details, following the format specified in `.env.example`.
+
+This approach ensures the project can be set up and evaluated by authorized users while maintaining the security of the database connection.
