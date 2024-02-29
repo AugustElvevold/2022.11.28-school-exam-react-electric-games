@@ -67,8 +67,6 @@ dotnet dev-certs https --trust
 
 This project uses a cloud-hosted MongoDB instance. For security reasons, the connection details are not included in the project files. To run the project locally:
 
-1. Create a `.env` file in the root directory.
-2. Contact me to obtain the necessary environment variable details for the database connection.
-3. Populate the `.env` file with the provided details, following the format specified in `.env.example`.
+* Contact me to obtain the necessary `appsettings.Development.json` for the database connection.
 
 This approach ensures the project can be set up and evaluated by authorized users while maintaining the security of the database connection.
